@@ -1,0 +1,2 @@
+# PokemonApp
+ endproject Android (Kotlin)
