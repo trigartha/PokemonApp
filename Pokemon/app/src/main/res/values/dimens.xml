@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="marging_card">8dp</dimen>
+    <dimen name="cornerradius_card">6dp</dimen>
+    <dimen name="height_card">75dp</dimen>
+    <dimen name="margin_standard">16dp</dimen>
+    <dimen name="margin_standard_min">8dp</dimen>
+    <dimen name="padding_standard">16dp</dimen>
+    <dimen name="margin_navigationbar_inbetween">56dp</dimen>
+    <dimen name="weight_sum_total">1</dimen>
+    <dimen name="image_hundred">100dp</dimen>
+    <item name="weight_half" type="dimen" format="float">0.5</item>
+    <item name="weight_three_quarters" type="dimen" format="float">0.75</item>
+    <item name="weight_one_quarter" type="dimen" format="float">0.25</item>
+    <dimen name="fab_margin">8dp</dimen>
+    <dimen name="height_card_long">100dp</dimen>
+    <dimen name="text_search">16sp</dimen>
+    <dimen name="button_height">48dp</dimen>
+    <dimen name="button_width">112dp</dimen>
+    <dimen name="button_elevation">8dp</dimen>
+    <dimen name="button_corner">8dp</dimen>
+    <dimen name="recycler_detail_height">100dp</dimen>
+    <dimen name="button_corner_fab_top">24dp</dimen>
+    <dimen name="button_corner_fab_bottom">18dp</dimen>
+    <dimen name="negative_padding">-4dp</dimen>
+    <dimen name="search_image_size">96dp</dimen>
+    <dimen name="search_image_margin_top">48dp</dimen>
+    <dimen name="viewpager_bottom">48dp</dimen>
+</resources>

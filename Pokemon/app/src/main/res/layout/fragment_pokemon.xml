@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--layout is the signal to the data binding library that it should work on the layout file,
+    library will generate a binding class
+    by default the class is named after the layout file,
+    using CamelCase class naming style and suffixed with Binding-->
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="pokemon"
+            type="com.example.pokemon.models.Pokemon" />
+        <variable
+            name="pokemonSpecies"
+            type="com.example.pokemon.models.PokemonSpecies" />
+        <variable
+            name="viewModel"
+            type="com.example.pokemon.viewmodels.PokemonViewModel" />
+        <variable
+            name="clickListener"
+            type="android.view.View.OnClickListener"/>
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/margin_standard">
+            <TextView
+                android:id="@+id/textview_pokemon"
+                style="?android:listSeparatorTextViewStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/aldrich"
+                android:text="@{pokemon.pokemonName}" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/imageview_default_pokemon"
+                    android:layout_width="@dimen/image_hundred"
+                    android:layout_height="@dimen/image_hundred"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="1"
+                    app:imageUrl="@{pokemon.sprites.frontDefault}"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="@dimen/weight_sum_total">
+                <TextView
+                    android:id="@+id/textview_height"
+                    style="?android:listSeparatorTextViewStyle"
+                    android:layout_weight="@dimen/weight_half"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/aldrich"
+                    android:text="@{@string/pokemon_height.concat(Integer.toString(pokemon.height)).concat(@string/pokemon_height_measure_unit)}" />
+                <TextView
+                    android:id="@+id/textview_weight"
+                    style="?android:listSeparatorTextViewStyle"
+                    android:layout_weight="@dimen/weight_half"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/aldrich"
+                    android:text="@{@string/pokemon_weight.concat(Integer.toString(pokemon.weight)).concat(@string/pokemon_weight_measure_unit)}" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="@dimen/weight_sum_total">
+                <TextView
+                    android:id="@+id/textview_habitat_text"
+                    style="?android:listSeparatorTextViewStyle"
+                    android:layout_weight="@dimen/weight_half"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/aldrich"
+                    android:text="@string/pokemon_habitat" />
+                <TextView
+                    android:id="@+id/textview_habitat"
+                    style="?android:listSeparatorTextViewStyle"
+                    android:layout_weight="@dimen/weight_half"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/aldrich"
+                    android:text="@{pokemonSpecies.habitat.name}" />
+            </LinearLayout>
+            <TextView
+                android:id="@+id/textview_moves"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/aldrich"
+                android:text="@string/pokemon_moves" />
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/recycler_detail_height">
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/moves_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
+                    app:spanCount="2"
+                    tools:listitem="@layout/list_item_moves"/>
+            </ScrollView>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="@dimen/weight_sum_total">
+                <TextView
+                    android:id="@+id/textview_base_experience_text"
+                    style="?android:listSeparatorTextViewStyle"
+                    android:layout_weight="@dimen/weight_half"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/aldrich"
+                    android:text="@string/base_experience" />
+                <TextView
+                    android:id="@+id/textview_base_experience"
+                    style="?android:listSeparatorTextViewStyle"
+                    android:layout_weight="@dimen/weight_half"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/aldrich"
+                    android:text="@{Integer.toString(pokemon.baseExperience)}" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="@dimen/weight_sum_total">
+                <TextView
+                    android:id="@+id/textview_color_text"
+                    style="?android:listSeparatorTextViewStyle"
+                    android:layout_weight="@dimen/weight_half"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/aldrich"
+                    android:text="@string/color_text" />
+                <TextView
+                    android:id="@+id/textview_color"
+                    style="?android:listSeparatorTextViewStyle"
+                    android:layout_weight="@dimen/weight_half"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/aldrich"
+                    android:text="@{pokemonSpecies.color.name}" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="@dimen/weight_sum_total">
+                <TextView
+                    android:id="@+id/textview_shape_text"
+                    style="?android:listSeparatorTextViewStyle"
+                    android:layout_weight="@dimen/weight_half"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/aldrich"
+                    android:text="@string/shape" />
+                <TextView
+                    android:id="@+id/textview_shape"
+                    style="?android:listSeparatorTextViewStyle"
+                    android:layout_weight="@dimen/weight_half"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/aldrich"
+                    android:text="@{pokemonSpecies.shape.name}" />
+            </LinearLayout>
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="gone"
+            android:indeterminate="true" />
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab"
+            style="@style/myCustomThemeForFab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/fab_margin"
+            android:onClick="@{clickListener}"
+            app:layout_anchorGravity="bottom|end"
+            app:srcCompat="@drawable/ic_favorite_black" />
+        </LinearLayout>
+    </LinearLayout>
+</layout>

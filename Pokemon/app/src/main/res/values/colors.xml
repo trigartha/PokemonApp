@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#E14545</color>
+    <color name="colorPrimaryDark">#5a2952</color>
+    <color name="colorAccent">#FFD5E2</color>
+
+    <color name="background">#cdcdcd</color>
+    <color name="colorMove">#A8828A</color>
+    <color name="purple_bright">#b46294</color>
+
+
+    //Transparant
+    <color name="transparant">#00FDFCFD</color>
+
+</resources>

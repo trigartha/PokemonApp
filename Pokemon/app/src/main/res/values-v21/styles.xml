@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="PokemonButton" parent="Widget.MaterialComponents.Button">
+        <item name="cornerRadius">@dimen/button_corner</item>
+        <item name="android:gravity">center</item>
+        <item name="android:fontFamily">@font/aldrich</item>
+        <item name="android:colorButtonNormal">@color/colorAccent</item>
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+        <item name="android:elevation">@dimen/button_elevation</item>
+    </style>
+</resources>

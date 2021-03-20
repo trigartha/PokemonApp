@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">Pokémon</string>
+    <string name="pokemon">Pokémon</string>
+    <string name="pokemon_details">Details</string>
+    <string name="pokemon_type">Type</string>
+    <string name="pokemon_ability">Ability</string>
+    <string name="pokemon_move">Move</string>
+    <string name="pokemon_colour">Colour</string>
+    <string name="pokemon_species">Species</string>
+    <string name="name">Name</string>
+    <string name="index">Index</string>
+    <string name="pokedex">PokéDex</string>
+    <string name="my_pokemons">My Pokemons</string>
+    <string name="pokemon_item_image">Image of Pokémon</string>
+    <string name="pokemon_moves">Moves</string>
+    <string name="pokemon_weight_measure_unit">hg</string>
+    <string name="pokemon_height_measure_unit">dm</string>
+    <string name="pokemon_weight">weight: </string>
+    <string name="pokemon_height">height: </string>
+    <string name="pokemon_habitat">habitat: </string>
+    <string name="pokemon_name">Pokemon Name</string>
+    <string name="button_search">Search</string>
+    <string name="button_cancel">Cancel</string>
+    <string name="search_phrase">Gotta catch them all!</string>
+    <string name="pokeball">pokeball</string>
+    <string name="name_error">Need to fill in a name</string>
+    <string name="flavour_text">Flavours</string>
+    <string name="base_experience">Base Experience:</string>
+    <string name="order">Order:</string>
+    <string name="base_happiness">Base Happiness:</string>
+    <string name="color_text">Color:</string>
+    <string name="shape">Shape:</string>
+</resources>

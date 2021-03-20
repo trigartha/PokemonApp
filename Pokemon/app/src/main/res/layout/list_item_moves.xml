@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="clickListener"
+            type="android.view.View.OnClickListener" />
+        <variable
+            name="PokemonMove"
+            type="com.example.pokemon.models.Move" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardview_move_item_pokemon"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/marging_card"
+        app:cardCornerRadius="@dimen/cornerradius_card"
+        android:onClick="@{clickListener}"
+        app:cardBackgroundColor="@color/colorMove">
+
+            <TextView
+                android:id="@+id/pokemon_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_standard"
+                android:layout_marginLeft="@dimen/margin_standard"
+                android:layout_marginTop="@dimen/margin_standard_min"
+                android:layout_marginEnd="@dimen/margin_standard_min"
+                android:layout_marginRight="@dimen/margin_standard_min"
+                android:textAlignment="center"
+                android:fontFamily="@font/aldrich"
+                android:paddingBottom="@dimen/margin_standard_min"
+                android:paddingTop="@dimen/negative_padding"
+                android:text="@{PokemonMove.move.name}"
+                tools:layout_conversion_absoluteHeight="19dp"
+                tools:layout_conversion_absoluteWidth="395dp"
+                android:gravity="center_horizontal" />
+
+    </androidx.cardview.widget.CardView>
+
+</layout>

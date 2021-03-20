@@ -1,0 +1,73 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <!--this attribute is to change the theme of the extended FAB-->
+        <item name="floatingActionButtonStyle">
+            @style/Widget.App.FloatingActionButton</item>
+        <!--this attribute is to change the theme of the normal Button-->
+        <item name="buttonStyle">
+            @style/Widget.AppCompat.Button
+        </item>
+
+    </style>
+
+    <!--Theming for the normal buttons-->
+    <style name="AppTheme.Button" parent="Widget.MaterialComponents.Button">
+        <!--CornerRadius for a normal Button-->
+        <item name="cornerRadius">@dimen/button_corner</item>
+        <!--Gravity in layout for a normal Button-->
+        <item name="android:gravity">center</item>
+        <!--Fontstyle for a normal Button-->
+        <item name="fontFamily">@font/aldrich</item>
+        <!--BackgroundColor for a normal Button-->
+        <item name="colorButtonNormal">@color/colorAccent</item>
+        <!--TextColor for a normal Button-->
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+    </style>
+    <style name="PokemonText" parent="@android:style/TextAppearance">
+        <item name="android:textColor">?colorPrimaryDark</item>
+    </style>
+
+    <style name="Widget.App.FloatingActionButton" parent="Widget.MaterialComponents.FloatingActionButton">
+        <!--the following attribute will changes in the appearance
+    of the extended FAB in terms of colors-->
+        <item name="materialThemeOverlay">@style/myCustomThemeForFab</item>
+        <!--the following attribute will change in the
+           shape appearance of the extended FAB-->
+        <item name="shapeAppearanceOverlay">@style/customFAB</item>
+        <!--to make the code look cleaner and readable, the above
+            two children are implemented separately-->
+    </style>
+    <!--this style is the child of the shapeAppearanceOverlay attribute
+        which in turn is the child of materialThemeOverlay-->
+    <style name="customFAB">
+        <!--for the FAB font-->
+        <item name="fontFamily">@font/aldrich</item>
+        <!--this attribute will make changes to Top Right according to value-->
+        <item name="cornerSizeTopRight">@dimen/button_corner_fab_top</item>
+        <!--this attribute will make changes to Top Left according to value-->
+        <item name="cornerSizeTopLeft">@dimen/button_corner_fab_top</item>
+        <!--this attribute will make changes to Bottom Right according to value-->
+        <item name="cornerSizeBottomRight">@dimen/button_corner_fab_bottom</item>
+        <!--this attribute will make changes to Bottom Left according to value-->
+        <item name="cornerSizeBottomLeft">@dimen/button_corner_fab_bottom</item>
+    </style>
+    <!--Here no need of mentioning the parent-->
+    <!--because this is already the child of the
+        shapeAppearanceOverlay which in turn is the child-->
+    <!--of the Widget.App.ExtendedFloatingActionButton-->
+    <style name="myCustomThemeForFab" parent="">
+
+        <!--this attribute gives makes the change in the background of the FAB-->
+        <item name="colorSecondary">@color/colorPrimary</item>
+
+        <!--this attribute gives makes the change in the text and icon color of the FAB-->
+        <item name="colorOnSecondary">@android:color/white</item>
+
+    </style>
+
+</resources>
